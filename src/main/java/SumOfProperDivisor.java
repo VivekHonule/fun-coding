@@ -18,6 +18,7 @@ public class SumOfProperDivisor {
         }
     }
 
+    //comment
     private static int[] calculateSumOfProperDivisors(int[] elements, int noOfElements) {
         int[] sumOfProperDivisors = new int[noOfElements];
         for (int i = 0; i < noOfElements; i++) {
