@@ -4,8 +4,7 @@ import java.util.Stack;
 public class StringReverse {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        String name = scanner.nextLine();
-        reverseString(name);
+        reverseString(scanner.nextLine());
     }
 
     private static void reverseString(String name) {
