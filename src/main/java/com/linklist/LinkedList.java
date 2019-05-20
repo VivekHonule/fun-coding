@@ -6,21 +6,18 @@ class LinkedList {
 
     void add(int data) {
         if (isEmpty()) {
-            head = new Node(data);
+            head = new Node(data, null);
             length++;
         } else {
-            Node pointer = this.head;
-            while (true) {
-                Node next = pointer.getNext();
-                if (next == null) {
-                    Node newNode = new Node(data);
-                    pointer.setNext(newNode);
-                    length++;
-                    break;
-                } else {
-                    pointer = next;
-                }
+            Node tempNode = this.head;
+            Node previous = null;
+            while (tempNode != null) {
+                previous = tempNode;
+                tempNode = tempNode.getNext();
             }
+            Node newNode = new Node(data, null);
+            previous.setNext(newNode);
+            length++;
         }
     }
 
@@ -70,8 +67,9 @@ class LinkedList {
         private int data;
         private Node next;
 
-        Node(int data) {
+        Node(int data, Node next) {
             this.data = data;
+            this.next = next;
         }
 
         int getData() {
